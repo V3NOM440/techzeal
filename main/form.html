@@ -1,0 +1,123 @@
+<div id="custom-form-container">
+    <form action="https://api.web3forms.com/submit" method="POST" class="custom-form">
+        <!-- Access Key -->
+        <input type="hidden" name="access_key" value="a52a8944-7c3d-480c-804e-d29bfbedbb35">
+
+        <!-- Tab Buttons for Section Selection -->
+        <div class="tab-buttons">
+            <button type="button" class="tab-button active" id="home-tab" onclick="showSection('home')">Home</button>
+            <button type="button" class="tab-button" id="housing-tab" onclick="showSection('housing-society')">Housing Society</button>
+            <button type="button" class="tab-button" id="commercial-tab" onclick="showSection('commercial')">Commercial</button>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home-section" class="form-section active">
+            <h2>Your Details (Home)</h2>
+
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" name="mobile" id="mobile" required>
+
+            <label for="pincode">Pincode</label>
+            <input type="text" name="pincode" id="pincode" required>
+
+            <label for="monthly-bill">Select Designation</label>
+            <select name="monthly-bill" id="monthly-bill" required>
+                <option value="lessthan1500"> Less Than 1500 </option>
+                <option value="2500-4000">1500 - 2000</option>
+                <option value="4000-8000">4000 - 8000</option>
+                <option value="morethan8000">More than 8000</option>
+            </select>
+        </div>
+
+        <!-- Housing Society Section -->
+        <div id="housing-society-section" class="form-section">
+            <h2>Housing Society Details</h2>
+
+            <label for="society-name">Name of Society</label>
+            <input type="text" name="society-name" id="society-name" required>
+
+            <label for="your-name">Your Name</label>
+            <input type="text" name="your-name" id="your-name" required>
+
+            <label for="mobile-housing">Mobile Number</label>
+            <input type="tel" name="mobile-housing" id="mobile-housing" required>
+
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" required>
+
+            <label for="designation">Select Designation</label>
+            <select name="designation" id="designation" required>
+                <option value="Resident">Resident</option>
+                <option value="Management-committee-member">Management Committee Member</option>
+                <option value="Builder">Builderr</option>
+                <option value="Facility-member">Facility Member</option>
+            </select>
+
+            <label for="agm-status">AGM Approval Status</label>
+            <select name="agm-status" id="agm-status" required>
+                <option value="approved">Approved</option>
+                <option value="dont-have">Don't Have Approval</option>
+                <option value="want-help">Want Help For AGM</option>
+            </select>
+        </div>
+
+        <!-- Commercial Section -->
+        <div id="commercial-section" class="form-section">
+            <h2>Commercial Details</h2>
+
+            <label for="name-commercial">Your Name</label>
+            <input type="text" name="name-commercial" id="name-commercial" required>
+
+            <label for="mobile-commercial">Mobile Number</label>
+            <input type="tel" name="mobile-commercial" id="mobile-commercial" required>
+
+            <label for="pincode-commercial">Pincode</label>
+            <input type="text" name="pincode-commercial" id="pincode-commercial" required>
+
+            <label for="monthly-bill">Monthly Bill</label>
+            <input type="number" name="monthly-bill" id="monthly-bill" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Form</button>
+    </form>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.form-section');
+            sections.forEach(function(sectionElement) {
+                sectionElement.style.display = 'none';
+                sectionElement.classList.remove('active');
+            });
+
+            // Remove active class from all tab buttons
+            var buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(section + '-section');
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+                selectedSection.classList.add('active');
+            }
+
+            // Add active class to the selected button
+            var selectedButton = document.getElementById(section + '-tab');
+            if (selectedButton) {
+                selectedButton.classList.add('active');
+            }
+        }
+
+        // Initially show the 'Home' section and set it as active
+        showSection('home');
+    </script>
+</div>

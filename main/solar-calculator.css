@@ -1,0 +1,169 @@
+/* General Styles for Solar Calculator */
+.solar-calculator-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Solar Calculator Form Container */
+.solar-calculator {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title of the Calculator */
+.solar-calculator h2 {
+    text-align: center;
+    color: #f58025; /* Orange color for heading */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Form Fields and Labels */
+.solar-calculator label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333; /* Dark text */
+}
+
+.solar-calculator input[type="number"],
+.solar-calculator select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+
+/* Buttons */
+.solar-calculator button {
+    background-color: #f58025; /* Orange button background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.solar-calculator button:hover {
+    background-color: #e07b1e; /* Slightly darker orange */
+}
+
+/* Result Section */
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.result span {
+    color: #f58025; /* Orange color for result values */
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Specific Media Query for Solar Calculator */
+@media (max-width: 900px) {
+    /* Only adjust the solar-calculator elements */
+    .solar-calculator {
+        padding: 15px;
+    }
+
+    .solar-calculator h2 {
+        font-size: 1.5rem;
+    }
+
+    .solar-calculator input[type="number"],
+    .solar-calculator select {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .solar-calculator button {
+        padding: 8px 16px;
+    }
+
+    .result {
+        font-size: 1rem;
+    }
+
+    .error-message {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+    position: absolute;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Adjust width for smaller modal */
+    max-width: 400px; /* Maximum width */
+    height: auto; /* Auto height */
+    max-height: 80%; /* Restrict height */
+    overflow-y: auto; /* Scroll if content exceeds height */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

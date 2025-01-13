@@ -1,0 +1,176 @@
+/* General Styles for Form */
+#custom-form-container {
+    font-family: Arial, sans-serif;
+    width: 60%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-image: url("banner3.jpg"); /* Add your background image path */
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: #ff7513;
+}
+
+/* Blur Effect */
+#custom-form-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for visibility */
+    backdrop-filter: blur(20px); /* Apply blur effect */
+    z-index: -1; /* Place the blur behind content */
+    border-radius: 20px;
+}
+
+/* Tab Buttons */
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #fff;
+    border: 1px solid #f58025;
+    color: #f58025;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #f58025;
+    color: white;
+}
+
+.tab-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Form Sections */
+.form-section {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.form-section.active {
+    display: inline;
+}
+
+h2 {
+    text-align: center;
+    color: #f58025;
+    margin-bottom: 20px;
+}
+
+/* Flex layout for form fields */
+.form-group {
+    display: flex;
+    align-items: center;  /* Align items vertically centered */
+    justify-content: space-between; /* Space between label and input */
+    margin-bottom: 15px;
+}
+
+/* Form Labels */
+label {
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff7513;
+    width: 30%; /* 30% width for labels */
+    text-align: left; /* Align label text to the left */
+}
+
+/* Adjusted input field widths */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 65%; /* 65% width for inputs (right side of the label) */
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Slightly transparent border */
+    font-size: 1rem;
+    background-color: transparent; /* Make input background transparent */
+    color: white; /* Text color for input fields */
+}
+
+/* Dropdown Select Menu Styling */
+select {
+    background-color: #ff7513; /* Red background for dropdown */
+    color: #ffffff; /* White text */
+    border: 1px solid #000000; /* Black border for contrast */
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: #ff7315; /* Darken background color on hover */
+}
+select option:hover {
+    background-color: #ff7315; /* Change background to black on hover */
+    color: #ffffff; /* Keep the text white on hover */
+}
+
+/* Style for submit button */
+button[type="submit"] {
+    background-color: #f58025;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 40%; /* Set button width to 40% */
+    max-width: 600px;
+    transition: background-color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #e07b1e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #custom-form-container {
+        width: 90%;
+    }
+    .tab-button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    /* Stack label and input vertically for smaller screens */
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    label {
+        width: 100%; /* Full width for label on smaller screens */
+        text-align: left; /* Align text to left on small screens */
+        margin-bottom: 5px; /* Space between label and input */
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%; /* Full width for inputs */
+    }
+}
